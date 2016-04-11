@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple JavaScript Quiz</title>
+  <style>
+  body{
+    background: orange;
+    color:#fff;
+    font-family: 'Arial',sans-serif;
+    font-size: 14px;
+  }
+  #container{
+    width: 60%;
+    background: blue;
+    margin:20px auto;
+    overflow: auto;
+    padding: 25px;
+  }
+  header{
+    text-align: center;
+    border-bottom: white dashed 1px;
+  }
+  header h1{
+    margin: 0;
+    padding: 0;
+  }
+  header p{
+    padding: 0;
+    margin-top: 5px;
+    color:black;
+  }
+  section{
+    min-height:400px;
+  }
+  footer{
+    text-align: center;
+  }
+  input[type="submit"]{
+    background: orange;
+    border: 0;
+    color: white;
+    padding:10px 15px;
+    cursor: pointer;
+  }
+  #result h3{
+    background: orange;
+    padding: 10px;
+    margin:10px 0;
+  }
+  #result span{
+    color:black;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <div id="result"></div>
+  <div id="container">
+    <header>
+      <h1>Simple JavaScript Quiz</h1>
+      <p>Test your knowledge in <b>JavaScript fundamentals</b></p>
+    </header>
+    <section>
+      <form class = "quiz" name = "quiz" onsubmit="return submitAnswers()">
+        <b>1. In which HTML element do we put in JavaScript code?</b></br></br>
+        <input type="radio" name="group1" class="group1" value="a" id="q1a">a. &ltjs&gt</input>
+        <input type="radio" name="group1" class="group1" value="b" id="q1b">b. &ltscript&gt</input>
+        <input type="radio" name="group1" class="group1" value="c" id="q1c">c. &ltbody&gt</input>
+        <input type="radio" name="group1" class="group1" value="d" id="q1d">d. &ltlink&gt</input></br></br>
+        <b>2. Which HTML attribute is used to reference an external JavaScript file?</b></br></br>
+        <input type="radio" name="group2" class="group2" value="a" id="q2a">a. src</input>
+        <input type="radio" name="group2" class="group2" value="b" id="q2b">b. rel</input>
+        <input type="radio" name="group2" class="group2" value="c" id="q2c">c. type</input>
+        <input type="radio" name="group2" class="group2" value="d" id="q2d">d. href</input></br></br>
+        <b>3. How would you write "Hello" in an alert box?</b></br></br>
+        <input type="radio" name="group3" class="group3" value="a" id="q3a">a. msg("Hello")</input>
+        <input type="radio" name="group3" class="group3" value="b" id="q3b">b. alertBox("Hello")</input>
+        <input type="radio" name="group3" class="group3" value="c" id="q3c">c. document.write("Hello")</input>
+        <input type="radio" name="group3" class="group3" value="d" id="q3d">d. alert("Hello")</input></br></br>
+        <b>4. JavaScript is directly related to the "Java" programming language?</b></br></br>
+        <input type="radio" name="group4" class="group4" value="a" id="q4a">a. True</input>
+        <input type="radio" name="group4" class="group4" value="b" id="q4b">b. False</input></br></br>
+        <b>5. A variable in JavaScript must start with which special character?</b></br></br>
+        <input type="radio" name="group5" class="group5" value="a" id="q5a">a. @</input>
+        <input type="radio" name="group5" class="group5" value="b" id="q5b">b. $</input>
+        <input type="radio" name="group5" class="group5" value="c" id="q5c">c. #</input>
+        <input type="radio" name="group5" class="group5" value="d" id="q5d">d. No Special Character</input></br></br></br>
+        <input type="submit" name="Submit Answers" value="Submit Answers">
+      </form></br>
+    </section>
+  </div></br>
+  <footer>
+    Copyright &copy 2016, All Rights Reserved
+  </footer>
+</body>
+<script>
+  function submitAnswers(){
+    //get the answer value of each question
+    var total = 5;
+    var score = 0;
+    var x0 = document.forms['quiz']['group1'].value;
+    var x1 = document.forms['quiz']['group2'].value;
+    var x2 = document.forms['quiz']['group3'].value;
+    var x3 = document.forms['quiz']['group4'].value;
+    var x4 = document.forms['quiz']['group5'].value;
+    //alert if not answered
+    for(var i = 0; i < total; i++){
+      if(eval('x'+i)==null||eval('x'+i)==""){
+        alert('you missed question '+(i+1));
+        return false;
+      }
+    }
+    //set the correct answere
+    var answer = ['b','a','d','b','d'];
+    //calculate the score
+    for(var i = 0; i < total; i++){
+      if(eval('x'+i)==answer[i]){
+        score++;
+      }
+    }
+    alert('you have scored ' + score + ' out of ' + total);
+    var result = document.getElementById('result');
+    result.innerHTML='<h3> you have scored <span> '+score+' </span> out of <span> '+total+' </span>';
+    return false;
+  }
+</script>
+</html>
