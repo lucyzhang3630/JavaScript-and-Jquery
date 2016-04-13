@@ -1,0 +1,75 @@
+*{
+  padding: 0;
+  margin:0;
+}
+
+body{
+  background: #333;
+  font-family: "Arial",sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  color:white;
+  margin: auto;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container{
+  width:980px;
+  overflow: hidden;
+  margin:40px auto;/*this is to set the container div in the horizontal center of the page*/
+}
+
+#frame{
+  border-radius: 5px;
+  border-style: groove;
+  border-color: #7f7f7f;
+  border-width: 2px;
+  width:940px;
+  height:350px;
+  float:left;/*set the arrow and the frame container all float to the left,
+   in this way, the right arrow would be in the correct position,
+   or else, the right arrow would be somewhere else.
+  */
+  overflow: hidden;
+  position:relative;
+}
+
+#frame img{
+  width: 940px;
+  height:350px;
+}
+
+.slider{
+  position: absolute;
+}
+
+.content{
+  position:absolute;
+	bottom:0;
+	left:0;
+	padding:20px;
+	background:7f7f7f;
+	background: rgba(0,0,0,0.5);
+}
+
+#prev{
+  float: left;
+  margin-right: -45px;
+  margin-top: 130px;
+  z-index: 100;
+  position: relative;
+  cursor: pointer;
+}
+
+#next{
+  float: left;
+  margin-left: -45px;
+  margin-top: 130px;
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+}
