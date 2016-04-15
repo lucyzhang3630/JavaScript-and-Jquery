@@ -1,0 +1,83 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: "Segoue",sans-serif;
+  line-height: 1.6em;
+  font-size: 14px;
+  color:#666;
+  background: #e1e1e1 url("../img/creampaper.png")
+}
+
+header h1{
+  color:black;
+  margin: 30px 20px 0px 20px;
+}
+
+header span{
+  color:#dd2826;
+}
+
+header p{
+  margin:0px 20px 30px 20px;
+  color:grey;
+}
+
+#container{
+  width: 740px;
+  color:#fff;
+  margin: auto;
+  top:0;
+  left: 300px;
+  position: absolute;
+  background: #f4f4f4;
+}
+
+#searchBox{
+  background: white;
+  padding: 30px 20px;
+}
+
+footer{
+  text-align: center;
+  background: #f4f4f4;
+  padding:20px;
+  color:grey;
+}
+
+.keyword{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.1);
+  border: 1px solid #c8c8c8;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  width: 45%;
+  height: 40px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.searchBtn{
+  background: transparent url("../img/search.png") no-repeat;
+  height: 32px;
+  width: 32px;
+  left: -45px;
+  position: relative;
+  top:10px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.searchBtn:hover{
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+
+}
